@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="estilos.css">
   <title>Mis Facturas</title>
   <script src="js/index.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0/build/global/luxon.js"></script>
 </head>
 
 <body>
@@ -40,7 +41,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr class="row-dummy">
             <td>1000</td>
             <td>13/06/2018</td>
             <td>App Angular</td>
@@ -50,7 +51,7 @@
             <td class="table-success">Abonada</td>
             <td class="table-success">-</td>
           </tr>
-          <tr>
+          <tr class="row-dummy">
             <td>1000</td>
             <td>13/06/2018</td>
             <td>App Angular</td>
@@ -60,7 +61,7 @@
             <td class="table-success">Abonada</td>
             <td class="table-success">-</td>
           </tr>
-          <tr>
+          <tr class="row-dummy">
             <td>1000</td>
             <td>13/06/2018</td>
             <td>App Angular</td>
@@ -70,7 +71,7 @@
             <td class="table-danger">Pendiente</td>
             <td class="table-danger">28/2/2021 (hace x días)</td>
           </tr>
-          <tr>
+          <tr class="row-dummy">
             <td>1000</td>
             <td>13/06/2018</td>
             <td>App Angular</td>
@@ -80,9 +81,19 @@
             <td class="table-danger">Pendiente</td>
             <td class="table-success">1/4/2021 (faltan x días)</td>
           </tr>
+          <tr class="clonada row-dummy">
+            <td class="num"></td>
+            <td class="fecha"></td>
+            <td class="concepto"></td>
+            <td class="base"></td>
+            <td class="iva"></td>
+            <td class="total"></td>
+            <td class="estado table-danger"></td>
+            <td class="vence table-success"></td>
+          </tr>
         </tbody>
         <tfoot>
-          <tr>
+          <tr class="row-dummy">
             <th class="text-right" colspan="3">Totales:</th>
             <td>5000€</td>
             <td>5000€</td>
