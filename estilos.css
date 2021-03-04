@@ -230,5 +230,5 @@ button[type="submit"] {
 }
 
 .row-dummy {
-  visibility: hidden;
+  display: none;
 }
