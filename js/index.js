@@ -60,6 +60,9 @@ const recogerDatos = async () => {
   const totalIva = totales.querySelector(".total-iva");
   const totalTotal = totales.querySelector(".total-total");
   // eslint-disable-next-line prefer-const
+  let sumaTotalBase = 0;
+  let sumaTotalIva = 0;
+  let sumaTotalTotal = 0;
   for (const dato of datosTipoIngreso) {
     const filaClonada = clonarFila();
     const num = filaClonada.querySelector(".num");
@@ -73,8 +76,15 @@ const recogerDatos = async () => {
     estado.classList.remove("table-danger");
     vence.classList.remove("table-success");
     rellenarTabla(dato, num, fecha, concepto, base, iva, total, estado, vence);
+    sumaTotalBase += dato.base;
+    sumaTotalIva += (dato.base * dato.tipoIva) / 100;
+    sumaTotalTotal += (((dato.base * dato.tipoIva) / 100) + dato.base);
     tBody.append(filaClonada);
   }
+  totalBase.textContent = `${sumaTotalBase}€`;
+  totalIva.textContent = `${sumaTotalIva}€`;
+  totalTotal.textContent = `${sumaTotalTotal.toFixed(2)}€`;
+  tFoot.prepend(totales);
 };
 
 recogerDatos();
